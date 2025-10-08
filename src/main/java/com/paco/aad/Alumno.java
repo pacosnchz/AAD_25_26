@@ -49,6 +49,7 @@ public class Alumno {
 
     // metodo para leer registro del fichero
     public static Alumno read(RandomAccessFile raf) throws IOException { //debemos de añadir un return para que devuleva los datos del alumno que estamos buscando
+                //randomAccessFile escribe y lee en binario, no en texto, estudiar y repasar
 
         int id = raf.readInt(); //primero, leer el id
 
