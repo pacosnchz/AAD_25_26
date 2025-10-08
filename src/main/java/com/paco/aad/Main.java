@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
-@Slf4j //acostumbrarme a añadir este @ y añadir el lombok para poder usar los log
+@Slf4j //acostumbrarme a añadir este @ y añadir el lombok para poder usar los log.ingo y no los System.out.println
 
 public class Main {
 
@@ -68,5 +68,27 @@ public class Main {
         System.out.println("Alumno insertado correctamente.");
     }
 
+    private static void consultarAlumno(RandomAccessFile raf, Scanner scanner) throws IOException{
+        log.info("Posición del alumno ( empezando en 0): ");
+        int posicion = scanner.nextInt();  //introduciremos la posición mediante este scanner
 
+        long bytePosicion = posicion * Alumno.RECORD_SIZE; //la posición del alumno estará definida por la posición dada multiplicada por la cantidad de bytes máximos, sinedo cada intervalo de 52 bytes, la inforomcaión de un alumno distinto
+
+        if (bytePosicion >= raf.length()) {  // si la posición dada supera la cantidad de bytes que hay almacenados, significará que no hay ningún alumno en esa posición
+            log.info("No existe alumno en esa posición");
+            return;
+        }
+
+        raf.seek(bytePosicion);  //movemos el puntero al registro correspondiente
+
+        Alumno alumno = Alumno.read(raf);  //lee el registro del alumno. EN BINARIO
+
+        //una vez encontrado el alumno, enseñamos los datos
+        log.info("---------------");
+        log.info("ALUMNO ENCONTRADO");
+        log.info("---------------");
+        log.info("ID: " + alumno.getID());
+        log.info("Nombre: " + alumno.getNombre());
+        log.info("Nota: " + alumno.getNota());
+    }
 }
