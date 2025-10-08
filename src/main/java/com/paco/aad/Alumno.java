@@ -12,6 +12,24 @@ public class Alumno {
     private String nombre;
     private double nota;
 
+    //constructor
+    public Alumno (int od, String nombre, double nota){ //este es el constructor de Alumno
+        this.id = id;
+        setNombre(nombre); //definido más abajo, para ajustar el tamaño del nombre
+        this.nota = nota;
+    }
 
+    //getters and setters
+    public int getID() { return id; }
+    public String getNombre() { return nombre; }
+    public double getNota() { return nota; }
+
+    public void setNota(double nota) {this.nota = nota; }//para ajustar el tamaño del nombre a 20; si se pasa, se recorta a 20, y si no llega, se rellena hasta 20
+
+    public void setNombre(String nombre) {
+        if (nombre.length() > NOMBRE_LENGTH)
+            this.nombre = nombre.substring(0, NOMBRE_LENGTH);
+        else
+            this.nombre = String.format("%-" + NOMBRE_LENGTH + "s", nombre),
     }
 }
