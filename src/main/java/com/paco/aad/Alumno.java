@@ -28,9 +28,9 @@ public class Alumno {
     public String getNombre() { return nombre; }
     public double getNota() { return nota; }
 
-    public void setNota(double nota) {this.nota = nota; }//para ajustar el tamaño del nombre a 20; si se pasa, se recorta a 20, y si no llega, se rellena hasta 20
+    public void setNota(double nota) {this.nota = nota; }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre) {              //para ajustar el tamaño del nombre a 20; si se pasa, se recorta a 20, y si no llega, se rellena hasta 20
         if (nombre.length() > NOMBRE_LENGTH)
             this.nombre = nombre.substring(0, NOMBRE_LENGTH);
         else
