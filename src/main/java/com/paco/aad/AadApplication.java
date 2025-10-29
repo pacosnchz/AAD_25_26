@@ -79,4 +79,3 @@ public class AadApplication implements CommandLineRunner {
         xmlMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath), alumnos);
     }
 }
-
