@@ -4,17 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Student {
 
-    private Integer id;
+    private Integer id_alumno;
     private String nif;
-    private String name;
+    private String nombre;
     private String email;
-    private String curse;  // según enunciado
-    private List<Module> modules;
 }

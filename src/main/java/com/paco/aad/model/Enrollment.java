@@ -11,8 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Enrollment {
 
-    private Integer id;
-    private Integer studentId;
-    private Integer moduleId;
-    private LocalDate date;
+    private Integer studentId;   // id_alumno
+    private Integer moduleId;    // id_modulo
+    private LocalDate date;      // fecha
 }

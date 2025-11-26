@@ -5,7 +5,3 @@ spring:
     password: 1234
     driver-class-name: org.postgresql.Driver
 
-sql:
-  scripts:
-    - classpath:sql/01_schema.sql
-    - classpath:sql/02_procedures.sql

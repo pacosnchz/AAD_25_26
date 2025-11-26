@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Module {
 
-    private Integer id;
-    private String code;
-    private String name;
-    private Integer hours;
+    private Integer id_modulo;
+    private String codigo;
+    private String nombre;
+    private Integer horas;
 }
