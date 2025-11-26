@@ -7,22 +7,4 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     ports:
-      - "5432:5432"
-#services:
-#  db:
-#    image: postgres:latest
-#    container_name: aad_db_container
-#    restart: always
-#    environment:
-#      POSTGRES_DB: aad_db
-#      POSTGRES_USER: user
-#      POSTGRES_PASSWORD: pass
-#    ports:
-#      - "5432:5432"
-#    volumes:
-#      - db_data:/var/lib/postgresql/data
-#
-#volumes:
-#  db_data:
-#    #a
-###a
+      - "5434:5432"
