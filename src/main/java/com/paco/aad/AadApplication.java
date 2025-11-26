@@ -35,24 +35,24 @@ public class AadApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         // Código EXACTO requerido por el enunciado
-        Student valentin = new Student(null, "32902597Q", "Valentin",
-                "valentin@gmail.com", "DAM", List.of());
+        Student paco = new Student(null, "32902597Q", "Paco",
+                "pacosnchz@icloud.com", "DAM", List.of());
 
         Module programacion = new Module(null, "0001", "Programación",
                 250);
 
         // Crear entidades
-        valentin = studentManagementService.createStudent(valentin);
+        paco = studentManagementService.createStudent(paco);
         programacion = studentManagementService.createModule(programacion);
 
         // Matricular (con transacción)
         studentManagementService.enrollStudentInModule(
-                valentin.getId(),
+                paco.getId(),
                 programacion.getId()
         );
 
         // Eliminar al estudiante
-        studentRepository.delete(valentin.getId());
+        studentRepository.delete(paco.getId());
 
         log.info("Prueba ACT_2_1 completada correctamente");
     }
