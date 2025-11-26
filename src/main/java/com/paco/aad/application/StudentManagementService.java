@@ -33,10 +33,7 @@ public class StudentManagementService {
         return moduleRepository.create(m);
     }
 
-    /**
-     * Matricula a un alumno en un módulo
-     * Se usa @Transactional porque la acción debe ser atómica.
-     */
+
     @Transactional
     public void enrollStudentInModule(Integer studentId, Integer moduleId) {
         enrollmentRepository.enroll(studentId, moduleId);
