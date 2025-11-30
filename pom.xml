@@ -21,7 +21,7 @@
 
     <dependencies>
 
-        <!-- Opcional: si algún día usas controladores REST -->
+        <!-- Opcional: mantener si piensas usar REST en la actividad -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -37,10 +37,9 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
-        <!-- Lombok (solo una vez) -->
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -63,4 +62,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

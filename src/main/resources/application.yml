@@ -5,3 +5,9 @@ spring:
     password: 1234
     driver-class-name: org.postgresql.Driver
 
+  sql:
+    init:
+      mode: always
+
+  jpa:
+    defer-datasource-initialization: true
