@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.fencgut961</groupId>
+    <groupId>com.paco</groupId>
     <artifactId>aad</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 

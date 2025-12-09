@@ -33,25 +33,22 @@ public class AadApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
-        // Crear estudiante
-        Student pako = new Student(null, "49108229E", "Pako", "pako@gmail.com");
-        pako = studentRepo.create(pako);
-        log.info("Alumno creado: {}", pako);
+        Student sofi = new Student(null, "NIF-" + System.nanoTime(), "Sofi", "sofia" + System.nanoTime() + "@mail.com");
+        sofi = studentRepo.create(sofi);
+        log.info("Alumno creado: {}", sofi);
 
-        // Crear módulo
-        Module ipe = new Module(null, "0005", "IPE", 250);
-        ipe = moduleRepo.create(ipe);
-        log.info("Módulo creado: {}", ipe);
+        Module acceso = new Module(null, "0004", "Interfaces", 250);
+        acceso = moduleRepo.create(acceso);
+        log.info("Módulo creado: {}", acceso);
 
-        // Matricular (ahora vía servicio transaccional)
+        // AHORA SI: matriculación con servicio (transaccional)
         enrollmentService.enrollStudentInModule(
-                pako.getId_alumno(),
-                ipe.getId_modulo()
+                sofi.getId_alumno(),
+                acceso.getId_modulo()
         );
-        log.info("Alumno matriculado en el módulo (vía servicio)");
 
-        log.info("Prueba ACT_2_2 completada correctamente");
+        log.info("Alumno matriculado correctamente.");
     }
 }

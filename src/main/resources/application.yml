@@ -1,13 +1,12 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5434/aad_db
-    username: postgres
-    password: 1234
-    driver-class-name: org.postgresql.Driver
-
   sql:
     init:
       mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
 
-  jpa:
-    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:postgresql://localhost:5436/aad_database
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
